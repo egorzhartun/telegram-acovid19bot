@@ -56,4 +56,35 @@ bot.command('all', async (ctx) => {
     }
 })
 
+bot.on('text', async (ctx) => {
+    try {
+        const nameCountry = ctx.message.text
+
+        const covidData = await axios.get(`https://disease.sh/v3/covid-19/countries/${nameCountry}`)
+
+        const {
+            updated,
+            cases,
+            todayCases,
+            deaths,
+            todayDeaths
+        } = covidData.data
+
+        const formatData = `
+            Знаешь, ${ctx.from.first_name}.
+            Информация обновлена: *${moment(updated).fromNow()}*
+            Cлучаев заражения: *${cases} чел.*,
+            Всего случаев заражения: *${todayCases} чел.*,
+            Смерти: *${deaths} чел.*,
+            Выздоровело: *${todayDeaths} чел.*
+        `
+
+        ctx.reply(formatData, extra.markdown())
+    } catch(error) {
+        ctx.reply(`
+            Прости, ${ctx.from.first_name}, но сегодня выдался сложный день.
+        `)
+    }
+})
+
 bot.launch()
