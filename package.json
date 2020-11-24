@@ -1,0 +1,24 @@
+{
+  "name": "telegram-acovid19bot",
+  "version": "1.0.0",
+  "description": "statistics and research",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egorzhartun/telegram-acovid19bot.git"
+  },
+  "author": "egorzhartun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/egorzhartun/telegram-acovid19bot/issues"
+  },
+  "homepage": "https://github.com/egorzhartun/telegram-acovid19bot#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "dotenv": "^8.2.0",
+    "telegraf": "^3.38.0"
+  }
+}
