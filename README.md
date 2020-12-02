@@ -1,2 +1,2 @@
 # telegram-acovid19bot
-Coronavirus Disease (COVID-19) – Statistics and Research
+Telegram bot ACOVID-19 live statistics and coronavirus news tracking the number of confirmed cases, recovered patients, and death toll by country.
